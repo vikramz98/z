@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z1Pixel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: #00d4ff;
+            color: #1e3c72;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #00b7d4;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about, .services, .portfolio, .contact {
+            text-align: center;
+        }
+
+        .about h2, .services h2, .portfolio h2, .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1e3c72;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services-grid, .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item, .portfolio-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover, .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-item i {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3, .portfolio-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1e3c72;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-item a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        AscendantAnchor {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        .portfolio-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .contact input, .contact textarea {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact button {
+            background: #00d4ff;
+            color: #1e3c72;
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact button:hover {
+            background: #00b7d4;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Z1Pixel</h1>
+        <p>Transforming Ideas into Reality with Z1Pixel</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section about">
+        <h2>About Z1Pixel</h2>
+        <p>Welcome to Z1Pixel, lead by Vikram Bhardwaj. We are passionate about delivering top-notch digital solutions, including video editing,
+
+ graphic design, website design, web development, and mobile application development. Our mission is to help businesses thrive with creative and functional designs that leave a lasting impression.</p>
+    </section>
+
+    <section id="services" class="section services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <i class="fas fa-video"></i>
+                <h3>Video Editing</h3>
+                <p>Professional video editing services to create engaging content for ads, social media, and more.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Graphic Design</h3>
+                <p>Eye-catching logos, banners, and branding materials to elevate your business.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-desktop"></i>
+                <h3>Website Design</h3>
+                <p>Responsive and user-friendly website designs tailored to your brand.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Custom-built websites with advanced functionality and performance.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile App Development</h3>
+                <p>Innovative mobile apps for iOS and Android to engage your audience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+        <h2>Our Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://th.bing.com/th/id/OIP.tC-xhVNvhaL5eCZj4aBb1gHaE8?cb=iwp2&rs=1&pid=ImgDetMain" alt="Video Editing Demo">
+                <h3>Video Editing Demo</h3>
+                <p>A cinematic promotional video edited in Adobe Premiere Pro for a client's product launch.</p>
+                <a href="#contact">Contact for Similar Work</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://i.pinimg.com/originals/2f/e3/73/2fe3733b50a1106e267a7a8fa04b8881.jpg" alt="Graphic Design Demo">
+                <h3>Graphic Design Demo</h3>
+                <p>A vibrant logo and branding package for a startup.</p>
+                <a href="graphic-design.html">View More Designs</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://htmlburger.com/blog/wp-content/uploads/2023/04/modern-website-design-examples.jpg" alt="Website Design Demo">
+                <h3>Website Design Demo</h3>
+                <p>A sleek, responsive website for an e-commerce brand.</p>
+                <a href="#contact">Contact for Similar Work</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn-images-1.medium.com/v2/resize:fit:1200/1*pE2fOVDikEUwiQJlh4ggzg.jpeg" alt="Web Development Demo">
+                <h3>Web Development Demo</h3>
+                <p>A custom-built web application with advanced features.</p>
+                <a href="#contact">Contact for Similar Work</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://i.pinimg.com/originals/ca/ba/45/caba456db19dca113ca53e115e21570c.jpg" alt="Mobile App Demo">
+                <h3>Mobile App Demo</h3>
+                <p>A user-friendly mobile app for a service-based business.</p>
+                <a href="#contact">Contact for Similar Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+        
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> <a href="tel:+918544229288">+91 8544229288</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Z1Pixel by Vikram Bhardwaj. All rights reserved.</p>
+    </footer>
+</body>
+</html>
